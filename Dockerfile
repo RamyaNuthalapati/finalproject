@@ -1,18 +1,21 @@
-FROM python
+FROM httpd:2.4
+COPY [^\.]* /usr/local/apache2/htdocs/
 
-WORKDIR /app
+//FROM python
+
+//WORKDIR /app
 # We copy just the requirements.txt first to leverage Docker cache
-COPY ./requirements.txt .
+//COPY ./requirements.txt .
 
 //ENV DB_URL=dummyurl
 //ENV ACCESS_KEY=dummyurl
 //ENV SECRET_KEY=dummyurl
 
 #this runs when image is built
-RUN pip install -r requirements.txt
+//RUN pip install -r requirements.txt
 
-COPY . .
+C//OPY . .
 
-EXPOSE 5000
+//EXPOSE 5000
 
-ENTRYPOINT [ "python" ,"app.py" ]
+//ENTRYPOINT [ "python" ,"app.py" ]
